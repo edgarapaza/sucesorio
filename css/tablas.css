@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+table{
+    margin: 0 auto;
+    background-color: #f0ddaa;
+}
+
+table caption{
+    color: #e42d40;
+    font-size: 1.3em;
+}
+footer p{
+    color: #5EEE5D;
+    text-align: right;
+    padding-top: 100px;
+}
