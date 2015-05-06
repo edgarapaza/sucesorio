@@ -12,6 +12,7 @@ $sql = "SELECT codiusu, niveusu FROM usuarios WHERE logiusu= '$user' AND passusu
 
 $result = $mysqli->query($sql);
 $fila = $result->fetch_assoc();
+
 if($fila["niveusu"] == 1){
     $_SESSION['history'] = $fila['cod_usu'];
     header("Location: ../view/listado.php");
