@@ -17,3 +17,6 @@ footer p{
     text-align: right;
     padding-top: 100px;
 }
+table tr:hover{
+    background-color: #F6CA83;
+}
