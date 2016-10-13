@@ -1,10 +1,28 @@
 <?php
-function lista(){
-    include '../coreapp/conection.php';
 
-    $sql = "SELECT num_orden, num_exp, fec_inicio, fec_fallecio, apellidos, nombres, num_leg, num_folios, obs FROM sunat";
-    $listado = $mysqli->query($sql);
+	class Listado{
 
-    return $listado;
-}
+		private $conn;
+
+		function __construct(){
+			require_once "../coreapp/conection.php";
+			$link = new Conection();
+			$this->conn = $link->Conectar();
+			return $this->conn;
+		}
+
+		public function ListarTodo($orden){
+			$sql = "SELECT * FROM sunat ORDER BY $orden ASC";
+			$data = $this->conn->query($sql);
+			return $data;
+		}
+	}
+
+	/*$listado = new Listado();
+	$resultado = $listado->ListarTodo('apellidos');
+	while ($row = $resultado->fetch_array(MYSQLI_NUM)) {
+		printf("%s %s %s %s %s %s %s %s %s",$row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8]);
+		echo "<br>";
+	}
+	*/
 ?>
