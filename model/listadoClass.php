@@ -11,8 +11,8 @@
 			return $this->conn;
 		}
 
-		public function ListarTodo($orden){
-			$sql = "SELECT * FROM sunat ORDER BY $orden ASC";
+		public function ListarTodo(){
+			$sql = "SELECT * FROM sunat";
 			$data = $this->conn->query($sql);
 			return $data;
 		}
